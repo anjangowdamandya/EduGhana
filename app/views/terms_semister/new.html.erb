@@ -1,0 +1,64 @@
+<div id="content" class="container body-img">
+  <h2 class='heading-fix'> Create New Terms/Semister</h2>
+  <div>
+    <a href="<%= terms_semister_index_path %>" class='btn btn-normal btn-position-style'>Back</a>
+  </div>
+    <%= form_for :terms_semister, url: terms_semister_index_path do |f| %>
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <div class="form-group">
+          <div class="col-sm-6">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-6">
+            <%= f.label :start_date %>
+            <%= f.date_field :start_date, class: 'form-control' %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-12">
+
+        <div class="form-group">
+          <div class="col-sm-6">
+            <%= f.label :end_date %>
+            <%= f.date_field :end_date, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-6">
+            <%= f.label :vacation_date %>
+            <%= f.date_field :vacation_date, class: 'form-control' %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="form-group">
+          <div class="col-sm-6">
+            <%= f.label :reopening_date %>
+            <%= f.date_field :reopening_date, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <%= f.submit 'Save', class: 'btn btn-normal btn-primary fix-save-btn' %>
+  </div>
+  <% end %>
+</div>

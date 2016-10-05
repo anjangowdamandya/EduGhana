@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_date: 2016-10-05
+  end_date: 2016-10-05
+  vacation_date: 2016-10-05
+  reopening_date: 2016-10-05
+
+two:
+  name: MyString
+  start_date: 2016-10-05
+  end_date: 2016-10-05
+  vacation_date: 2016-10-05
+  reopening_date: 2016-10-05

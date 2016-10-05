@@ -11,17 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 0) do
-=======
-ActiveRecord::Schema.define(version: 20161004163637) do
->>>>>>> school
+ActiveRecord::Schema.define(version: 20161005170353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
   create_table "schools", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -36,5 +30,14 @@ ActiveRecord::Schema.define(version: 20161004163637) do
     t.datetime "updated_at",    null: false
   end
 
->>>>>>> school
+  create_table "terms_semisters", force: :cascade do |t|
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.date     "vacation_date"
+    t.date     "reopening_date"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
 end
