@@ -1,4 +1,13 @@
 <div class="well" style="text-align: center;width: 500px;margin-top: 250px;margin-left:200px;">
-	<h1>Welcome to Edughana!</h1>
-	<p>Homepage is in under development</p>
+  <h1>Welcome to Edughana!</h1>
+  <p>Homepage is in under development</p>
+  <% if user_signed_in? %>
+  <li>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>     
+  </li>
+  <% else %>
+  <li>
+    <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+  <% end %>
 </div>
