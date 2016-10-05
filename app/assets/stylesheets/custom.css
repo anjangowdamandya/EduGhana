@@ -1,0 +1,27 @@
+.body-img {
+  background-image: url("/assets/content-bg.gif")
+}
+.btn-position-style {
+  float: right;
+  color: #fff;
+  background-color: #6fb3de;
+}
+.fix-position-table {
+  margin-top: 100px;
+}
+.heading-fix {
+  margin-top: 25px;
+}
+.list-view thead tr th {
+  background-color: #286090;
+  color: #ffffff;
+}
+.list-view .table-striped > tbody > tr:nth-child(odd) > td,
+.list-view .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #d3dfe5;
+}
+
+.fix-save-btn {
+  float: right;
+  margin-top: 15px;
+}

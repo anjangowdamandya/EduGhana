@@ -12,6 +12,10 @@
  *
  *= require bootstrap
  *= require bootstrap.min
+<<<<<<< HEAD
+=======
+ *= require custom
+>>>>>>> school
  *= require_tree .
  *= require_self
  */
