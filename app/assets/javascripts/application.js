@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap.min
+//= require flash_message
 //= require_tree .
