@@ -37,3 +37,6 @@
   @extend .control-group;
   @extend .error;
  }
+ textarea {
+    resize: none;
+}

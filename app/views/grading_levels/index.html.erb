@@ -1,0 +1,34 @@
+<div id="content" class="container body-img">
+  <h2 class='heading-fix'> List of Grade Levels</h2>
+<div>
+  <%= link_to "Create Grade Level", new_grading_level_path, :class=>"btn btn-primary", :style=>"float :right;" %>
+</div>
+
+<div class="table-responsive list-view div-documents-list-section fix-position-table">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <!-- <th class="entry-num">Entry Number</th> -->
+        <th class="date">Name</th>
+        <th class="name">Minimum Marks</th>
+        <th class="document-title" style="padding-right:40px;">Maximum Marks</th>
+        <th class="status">Grade point</th>
+        <th class="share">Deescription</th>
+        <th class="action">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-body-background change-font">
+      <% @grading_levels.each do |grade| %>
+        <tr>
+          <td><%= grade.name %></td>
+          <td><%= grade.minimum_marks %></td>
+          <td><%= grade.maximum_marks %></td>
+          <td><%= grade.grade_point %></td>
+          <td><%= grade.description %></td>
+          <td><%= link_to 'Delete', grading_level_path(grade, :url=>"grading_level_url"), method: :delete, data:{confirm: 'Are you want to delete grade level?'}, :class=> "" %> | <%= link_to 'Edit', edit_grading_level_path(grade), :class=> '' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
