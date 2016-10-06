@@ -1,0 +1,34 @@
+<div id="content" class="container body-img">
+  <h2 class='heading-fix'> List of Terms/Semister</h2>
+<div>
+  <%= link_to "Create Terms/Semister", new_terms_semister_path, :class=>"btn btn-primary", :style=>"float :right;" %>
+</div>
+
+<div class="table-responsive list-view div-documents-list-section fix-position-table">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <!-- <th class="entry-num">Entry Number</th> -->
+        <th class="date">Name</th>
+        <th class="name">Start Date</th>
+        <th class="document-title" style="padding-right:40px;">End Date</th>
+        <th class="status">Vacation Date</th>
+        <th class="share">Reopening Date</th>
+        <th class="action">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-body-background change-font">
+      <% @terms_semisters.each do |terms| %>
+        <tr>
+          <td><%= terms.name %></td>
+          <td><%= terms.start_date %></td>
+          <td><%= terms.end_date %></td>
+          <td><%= terms.vacation_date %></td>
+          <td><%= terms.reopening_date %></td>
+          <td><%= link_to 'Delete', terms_semister_path(terms, :url=>"terms_semister_url"), method: :delete, data:{confirm: 'Are you want to delete terms/semister?'}, :class=> "" %> | <%= link_to 'Edit', edit_terms_semister_path(terms), :class=> '' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

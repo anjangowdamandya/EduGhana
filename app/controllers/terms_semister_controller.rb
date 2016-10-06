@@ -11,6 +11,7 @@ class TermsSemisterController < ApplicationController
   def create
     @terms_semister = TermsSemister.new(terms_params)
     if @terms_semister.valid? && @terms_semister.save!
+      flash[:success] = "Terms/semister created successfully!"
       redirect_to terms_semister_index_path
     else
       render 'new'
@@ -28,7 +29,8 @@ class TermsSemisterController < ApplicationController
   def update
     @terms_semister = TermsSemister.find_by_id(params[:id])
     if @terms_semister.present? && @terms_semister.update_attributes(terms_params)
-        redirect_to terms_semister_index_path
+       flash[:success] = "Terms/semister updated successfully!"
+       redirect_to terms_semister_index_path
     else
       render 'edit'
     end
@@ -37,10 +39,11 @@ class TermsSemisterController < ApplicationController
   def destroy
     @terms_semister = TermsSemister.find_by_id(params[:id])
     if @terms_semister.present? && @terms_semister.destroy
-      redirect_to terms_semister_index_path
+      flash[:success] = "Terms/semister deleted successfully!"
     else
-      render 'new'
+      flash[:error] = "Failed to delete terms/semister!"
     end
+      redirect_to terms_semister_index_path
   end
 
   private
