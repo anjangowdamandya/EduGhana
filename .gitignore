@@ -19,3 +19,6 @@
 # Ignore database and application yml files
 /config/database.yml
 /config/application.yml
+
+# Ignore schem.rb
+/db/schema.rb
