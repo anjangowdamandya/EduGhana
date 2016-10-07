@@ -35,7 +35,7 @@
 
 .field_with_errors {
   @extend .control-group !optional;
-  @extend .error;
+  @extend .error !optional;
  }
  textarea {
     resize: none;
