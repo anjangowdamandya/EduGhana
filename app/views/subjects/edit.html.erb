@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
+    <h3>Edit Subject Form</h3>
+    <br>
+    <%= form_for :subject, url: subject_path, :method=> :put do |f| %>
+      <% if @subject.errors.any? %>
+        <div id="error_explanation">
+          <h4><%= pluralize(@subject.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <ul>
+            <% @subject.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="form-group">
+            <div class="col-sm-12">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :type %>
+            <%= f.select :subject_type, ['Core', 'Elective'], class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :batch %>
+            <%= f.collection_select(:batch_id, Batch.all.select(:id, :name), :id, :name, {}, :class =>"form-control") %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container-fluid">
+        <div class="row" style="margin-left: 80px;">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= f.submit "Save", :class=>"btn btn-primary"  %>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= link_to "Cancel", subjects_path, :class=>"btn btn-danger" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
