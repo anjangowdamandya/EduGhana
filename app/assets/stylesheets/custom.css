@@ -2,10 +2,17 @@
   background-image: url("/assets/content-bg.gif")
 }
 .btn-position-style {
+  /*float: right;*/
+  color: #fff;
+  background-color: #6fb3de;
+}
+
+.create-btn-position {
   float: right;
   color: #fff;
   background-color: #6fb3de;
 }
+
 .fix-position-table {
   margin-top: 100px;
 }
@@ -43,4 +50,45 @@
 
 .fix-distance-show-school {
   margin-top: 50px;
+}
+
+.navbar-nav > li > a:hover {
+    background-color: transparent; text-decoration: none;  border-bottom: 3px solid white;margin: 30px 25px 25px 25px;
+}
+.navbar-nav > .active > a {
+    border-bottom: 3px solid white;margin: 30px 25px 25px 25px;
+}
+.btn {
+    text-transform: uppercase;
+    font-family: "Roboto";
+    border-radius: 3px;
+}
+.navbar-toggle {
+    background-color:#ea6060;border: 1px solid #ea6060;
+}
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+a:focus {
+    outline: none;
+}
+.shared_links{
+  color: white;
+  text-decoration: none;
+}
+
+.fix-width-header {
+  margin-top: 90px !important;
+}
+
+.align-center-text {
+  text-align: center;
+}
+
+.fix-input-filed-center {
+  margin-left: 27% !important;
+}
+
+.padding-issue-in-new {
+  margin-top: -13px;
 }

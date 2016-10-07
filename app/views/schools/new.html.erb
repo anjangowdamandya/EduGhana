@@ -1,5 +1,6 @@
-<div id="content" class="container body-img">
+<div id="content" class="container body-img fix-width-header">
   <h2 class='heading-fix'> Create New School</h2>
+<<<<<<< Updated upstream
   <div>
     <a href="<%= schools_path %>" class='btn btn-normal btn-position-style'>Back</a>
   </div>
@@ -18,83 +19,106 @@
     <div class="row">
 
       <div class="col-sm-12">
+=======
+  <%= form_for :school, url: schools_path do |f| %>
+  <div class="row">
+>>>>>>> Stashed changes
 
+    <div class="col-sm-6">
+      <div class="row">
         <div class="form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-10">
             <%= f.label :name %>
             <%= f.text_field :name, class: 'form-control' %>
           </div>
         </div>
+      </div></br>
 
+      <div class="row">
         <div class="form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-10">
             <%= f.label :address %>
             <%= f.text_field :address, class: 'form-control' %>
           </div>
         </div>
+      </div></br>
 
-      </div>
+      <!-- </div> -->
 
-      <div class="col-sm-12">
-
+      <!-- <div class="col-sm-10"> -->
+      <div class="row">
         <div class="form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-10">
             <%= f.label :email %>
             <%= f.text_field :email, class: 'form-control' %>
           </div>
         </div>
+      </div></br>
 
+      <div class="row">
         <div class="form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-10">
             <%= f.label :telephone %>
             <%= f.text_field :telephone, class: 'form-control' %>
           </div>
         </div>
-
       </div>
 
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
+    <!-- </div> -->
 
+    <!-- <div class="row"> -->
+    <div class="col-sm-6">
+
+      <div class="row">
         <div class="form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-10">
             <%= f.label :city %>
             <%= f.text_field :city, class: 'form-control' %>
           </div>
         </div>
+      </div></br>
 
+      <div class="row">
         <div class="form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-10">
             <%= f.label :county %>
             <%= f.text_field :country, class: 'form-control' %>
           </div>
         </div>
+      </div></br>
 
-      </div>
+      <!-- </div> -->
 
-      <div class="col-sm-12">
-
+      <!-- <div class="col-sm-10"> -->
+      <div class="row">
         <div class="form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-10">
             <%= f.label :region %>
             <%= f.text_field :region, class: 'form-control' %>
           </div>
         </div>
+      </div></br>
 
+      <div class="row">
         <div class="form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-10">
             <%= f.label :currency_type %>
             <%= f.text_field :currency_type, class: 'form-control' %>
           </div>
         </div>
-
       </div>
+
     </div>
+  </div>
 
   <div>
     <%= f.submit 'Save', class: 'btn btn-normal btn-primary fix-save-btn' %>
+  </div></br>
+  <div>
+    <a href="<%= schools_path %>" class='btn btn-normal btn-position-style'>Back</a>
   </div>
+
   <% end %>
 </div>
