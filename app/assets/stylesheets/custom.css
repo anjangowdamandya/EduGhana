@@ -40,3 +40,7 @@
  textarea {
     resize: none;
 }
+
+.fix-distance-show-school {
+  margin-top: 50px;
+}

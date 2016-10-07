@@ -14,6 +14,7 @@
         <th class="document-title" style="padding-right:40px;">Telephone</th>
         <th class="status">City</th>
         <th class="share">Country</th>
+        <th class="share">Region</th>
         <th class="action">Action</th>
       </tr>
     </thead>
@@ -26,6 +27,8 @@
           <td><%= school.city %></td>
           <td><%= school.country %></td>
           <td><%= school.region %></td>
+          <td><%= link_to 'Delete', school_path(school), method: :delete, data:{confirm: 'Are you want to delete School'}, :class=> "" %> | <%= link_to 'Edit', edit_school_path(school), :class=> '' %> | <%= link_to 'Show', school_path(school), :class=> '' %>
+          </td>
         </tr>
       <% end %>
     </tbody>
