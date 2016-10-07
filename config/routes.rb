@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :schools
   resources :terms_semister
   resources :grading_levels
+  resources :batches
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
