@@ -1,5 +1,8 @@
 class Batch < ActiveRecord::Base
 
+	#Associations
+	has_many :subjects
+
 	#Validations
 	validates :name, presence: true, :length => { :minimum => 2 }
 	validates :code, presence: true
