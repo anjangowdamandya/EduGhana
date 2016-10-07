@@ -1,28 +1,7 @@
 <div id="content" class="container body-img fix-width-header">
   <h2 class='heading-fix'> Create New School</h2>
-<<<<<<< Updated upstream
-  <div>
-    <a href="<%= schools_path %>" class='btn btn-normal btn-position-style'>Back</a>
-  </div>
-
-    <%= form_for :school, url: schools_path, :method=> :post do |f| %>
-    <% if @school.errors.any? %>
-      <div id="error_explanation">
-        <h4><%= pluralize(@school.errors.count, "error") %> prohibited this user from being saved:</h4>
-        <ul>
-          <% @school.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <div class="row">
-
-      <div class="col-sm-12">
-=======
   <%= form_for :school, url: schools_path do |f| %>
   <div class="row">
->>>>>>> Stashed changes
 
     <div class="col-sm-6">
       <div class="row">
