@@ -52,6 +52,19 @@
   margin-top: 50px;
 }
 
+.navbar {
+    margin-bottom: 0px;
+}
+.navbar-fixed-top {
+    border-bottom: 1px solid #646464;
+    background-color: #428bca;
+}
+.navbar-nav > li > a {
+    font-size: 16px; font-family: "Titillium Web"; color: rgb( 34, 34, 34 ); text-transform: uppercase; line-height: 1.125;
+    padding-bottom: 5px;padding-top: 5px;padding-left: 2px;padding-right: 2px;margin: 30px 25px 30px 25px;
+
+}
+
 .navbar-nav > li > a:hover {
     background-color: transparent; text-decoration: none;  border-bottom: 3px solid white;margin: 30px 25px 25px 25px;
 }
@@ -92,3 +105,4 @@ a:focus {
 .padding-issue-in-new {
   margin-top: -13px;
 }
+
