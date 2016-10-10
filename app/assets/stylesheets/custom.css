@@ -106,3 +106,8 @@ a:focus {
   margin-top: -13px;
 }
 
+.home-page-spacing{
+  margin-top:90px; 
+  min-height:60px;
+}
+
