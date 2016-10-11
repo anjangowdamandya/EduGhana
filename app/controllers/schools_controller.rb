@@ -1,5 +1,7 @@
 class SchoolsController < ApplicationController
-
+   #Filter
+  before_action :authenticate_user!
+  
   def index
     @schools = School.all
   end

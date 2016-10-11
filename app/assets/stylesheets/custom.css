@@ -141,3 +141,11 @@ a{
   text-decoration: none !important;
   background-color: transparent;
 }
+.cards {
+  border: 1px solid #d7d7d7;
+  background-color: #ffffff;
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+}
