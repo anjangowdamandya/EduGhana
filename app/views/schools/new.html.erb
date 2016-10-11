@@ -1,6 +1,16 @@
 <div id="content" class="container body-img fix-width-header">
-  <h2 class='heading-fix'> Create New School</h2>
+  <h2 class='heading-fix'> Create School</h2>
   <%= form_for :school, url: schools_path do |f| %>
+  <% if @school.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@school.errors.count, "error") %> prohibited this user from being saved:</h4>
+        <ul>
+          <% @school.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
   <div class="row">
 
     <div class="col-sm-6">
@@ -91,12 +101,20 @@
 
     </div>
   </div>
-
-  <div>
-    <%= f.submit 'Save', class: 'btn btn-normal btn-primary fix-save-btn' %>
-  </div></br>
-  <div>
-    <a href="<%= schools_path %>" class='btn btn-normal btn-position-style'>Back</a>
+  <br>
+  <div class="container-fluid">
+    <div class="row" style="margin-left: 80px;">
+      <div class="col-xs-6">
+        <div class="form-group">
+          <%= f.submit "Save", :class=>"btn btn-primary"  %>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="form-group">
+          <%= link_to "Cancel", schools_path, :class=>"btn btn-danger" %>
+        </div>
+      </div>
+    </div>
   </div>
 
   <% end %>
