@@ -13,7 +13,7 @@ class ExamsController < ApplicationController
   def create
     @exam = Exam.new(exam_params)
     if @exam.valid? && @exam.save!
-      flash[:success] = "Batch created successfully!"
+      flash[:success] = "Exam created successfully!"
       redirect_to exams_path
     else
       render 'new'
@@ -30,8 +30,8 @@ class ExamsController < ApplicationController
 
   def update
     @exam = Exam.find_by_id(params[:id])
-    if @exam.present? && @exam.update_attributes(batch_params)
-       flash[:success] = "Batch updated successfully!"
+    if @exam.present? && @exam.update_attributes(exam_params)
+       flash[:success] = "Exam updated successfully!"
        redirect_to exams_path
     else
       render 'edit'
@@ -41,9 +41,9 @@ class ExamsController < ApplicationController
   def destroy
     @exam = Exam.find_by_id(params[:id])
     if @exam.present? && @exam.destroy
-      flash[:success] = "Batch deleted successfully!"
+      flash[:success] = "Exam deleted successfully!"
     else
-      flash[:error] = "Failed to delete batch!"
+      flash[:error] = "Failed to delete exam!"
     end
       redirect_to exams_path
   end
@@ -51,7 +51,7 @@ class ExamsController < ApplicationController
   private
 
   def exam_params
-    params.require(:exam).permit(:name, :minimu_marks, :maximum_marks, :weightage)
+    params.require(:exam).permit(:name, :minimum_marks, :maximum_marks, :weightage)
   end
 
 end
