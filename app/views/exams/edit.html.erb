@@ -1,0 +1,72 @@
+<div class="container padding-issue-in-new">
+  <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
+    <h3 class='align-center-text'>Create Grading Level</h3>
+    <br>
+    <%= form_for :exam, url: exam_path, :method=> :get do |f| %>
+      <% if @exam.errors.any? %>
+        <div id="error_explanation">
+          <h4><%= pluralize(@exam.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <ul>
+            <% @exam.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class='row fix-input-filed-center'>
+      <div class="col-sm-8 col-xs-12">
+      <div class="row">
+        <div class="form-group">
+            <div class="col-sm-12">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :minimum_marks %>
+            <%= f.number_field :minimum_marks, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :maximum_marks %>
+            <%= f.number_field :maximum_marks, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :weightage %>
+            <%= f.number_field :weightage, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container-fluid">
+        <div class="row" style="margin-left: 80px;">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= f.submit "Save", :class=>"btn btn-primary"  %>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= link_to "Cancel", exams_path, :class=>"btn btn-danger" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+  </div>
+</div>
