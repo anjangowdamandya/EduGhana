@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :grading_levels
   resources :batches
   resources :subjects
+  resources :exams
 
 
   #Custom Routes

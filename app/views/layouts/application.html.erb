@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render :partial => "layouts/common/header" %><br>
+  <% if user_signed_in? %>
+  	<%= render :partial => "layouts/common/header" %><br>
+  <% else %>
+  <% end %>
   <div id="div_flash_message" class="container" >
   	<%= render :partial=>"/layouts/common/flash_messages" -%>
   </div>
