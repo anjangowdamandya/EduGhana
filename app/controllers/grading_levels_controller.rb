@@ -1,5 +1,7 @@
 class GradingLevelsController < ApplicationController
-
+   #Filter
+  before_action :authenticate_user!
+  
 	def index
     @grading_levels = GradingLevel.all
   end

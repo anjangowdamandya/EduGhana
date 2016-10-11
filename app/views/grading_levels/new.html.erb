@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container padding-issue-in-new">
   <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
-    <h3>Create Grading Level Form</h3>
+    <h3 class='align-center-text'>Create Grading Level</h3>
     <br>
     <%= form_for :grading_level, url: grading_levels_path do |f| %>
       <% if @grading_level.errors.any? %>
@@ -13,6 +13,8 @@
           </ul>
         </div>
       <% end %>
+      <div class='row fix-input-filed-center'>
+      <div class="col-sm-8 col-xs-12">
       <div class="row">
         <div class="form-group">
             <div class="col-sm-12">
@@ -72,6 +74,8 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
     <% end %>
   </div>
 </div>

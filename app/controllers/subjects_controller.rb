@@ -1,5 +1,7 @@
 class SubjectsController < ApplicationController
-
+   #Filter
+  before_action :authenticate_user!
+  
 	def index
     @subjects = Subject.all
   end

@@ -1,5 +1,7 @@
 class SchoolsController < ApplicationController
-
+   #Filter
+  before_action :authenticate_user!
+  
   def index
     @schools = School.all
   end
@@ -11,6 +13,7 @@ class SchoolsController < ApplicationController
   def create
     @school = School.new(school_params)
     if @school.valid? && @school.save!
+      flash[:success] = "School created successfully!"
       redirect_to schools_path
     else
       render 'new'
@@ -28,7 +31,8 @@ class SchoolsController < ApplicationController
   def update
     @school = School.find_by_id(params[:id])
     if @school.present? && @school.update_attributes(school_params)
-        redirect_to schools_path
+       flash[:success] = "School updated successfully!"
+       redirect_to schools_path
     else
       render 'edit'
     end
@@ -37,10 +41,11 @@ class SchoolsController < ApplicationController
   def destroy
     @school = School.find_by_id(params[:id])
     if @school.present? && @school.destroy
-      redirect_to schools_path
+      flash[:success] = "School deleted successfully!"
     else
-      render 'new'
+      flash[:error] = "Failed to delete school!"
     end
+      redirect_to schools_path
   end
 
   private

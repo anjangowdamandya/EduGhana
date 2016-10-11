@@ -1,4 +1,6 @@
 class TermsSemisterController < ApplicationController
+  #Filter
+  before_action :authenticate_user!
 
 	def index
     @terms_semisters = TermsSemister.all

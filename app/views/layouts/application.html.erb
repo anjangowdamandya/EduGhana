@@ -7,10 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="div_flash_message" class="container" >
-			<%= render :partial=>"/layouts/common/flash_messages" -%>
-		</div>
-<%= yield %>
-
+  <%= render :partial => "layouts/common/header" %><br>
+  <div id="div_flash_message" class="container" >
+  	<%= render :partial=>"/layouts/common/flash_messages" -%>
+  </div>
+  <%= yield %>
 </body>
 </html>

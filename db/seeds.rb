@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.find_or_create_by(email:"admin@yopmail.com") do |u|
+  u.password = 'admin123'
+  u.user_name = 'admin'
+  u.first_name = 'admin'
+  u.last_name = 'admin'
+  u.user_type = 'admin'
+end
