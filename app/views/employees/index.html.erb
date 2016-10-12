@@ -1,0 +1,32 @@
+<div id="content" class="container body-img" style="margin-top: 150px;">
+  <h2 class='heading-fix'> List of Employees</h2>
+  <div>
+    <%= link_to "Create Employee", new_employee_path, :class=>"btn btn-primary", :style=>"float :right;" %>
+  </div>
+
+  <div class="table-responsive list-view div-documents-list-section fix-position-table">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <!-- <th class="entry-num">Entry Number</th> -->
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="table-body-background change-font">
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.first_name %></td>
+            <td><%= employee.last_name %></td>
+            <td><%= employee.email %></td>
+            <td><%= employee.user_name %></td>
+            <td><%= link_to 'Delete', employee_path(employee, :url=>"employee_url"), method: :delete, data:{confirm: 'Are you want to delete employee?'}, :class=> "" %> | <%= link_to 'Edit', edit_employee_path(employee), :class=> '' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :batches
   resources :subjects
   resources :exams
+  resources :students
+  resources :employees
 
 
   #Custom Routes

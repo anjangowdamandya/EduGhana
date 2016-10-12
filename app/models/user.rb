@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
-  validates_uniqueness_of :user_name
   validates_presence_of :user_name
+  validates_uniqueness_of :user_name
   validates :user_name, length: { in: 4..20 }
+  validates_presence_of :user_type
+
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
