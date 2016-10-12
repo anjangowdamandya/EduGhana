@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :user_name
   validates :user_name, length: { in: 4..20 }
   validates_presence_of :user_type
+  has_one :subject, :foreign_key => 'employee_id'
 
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -18,5 +19,5 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
-  end     
+  end
 end

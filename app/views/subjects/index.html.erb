@@ -21,7 +21,7 @@
             <td><%= subject.name %></td>
             <td><%= subject.subject_type %></td>
             <td><%= subject.batch.name %></td>
-            <td><%= link_to 'Delete', subject_path(subject, :url=>"subject_url"), method: :delete, data:{confirm: 'Are you want to delete subject?'}, :class=> "" %> | <%= link_to 'Edit', edit_subject_path(subject), :class=> '' %></td>
+            <td><%= link_to 'Delete', subject_path(subject, :url=>"subject_url"), method: :delete, data:{confirm: 'Are you want to delete subject?'}, :class=> "" %> | <%= link_to 'Edit', edit_subject_path(subject), :class=> '' %> | <%= link_to 'Assign', assign_subject_path(subject), :class=> '' %></td>
           </tr>
         <% end %>
       </tbody>
