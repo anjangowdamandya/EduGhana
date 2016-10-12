@@ -30,7 +30,6 @@ class StudentsController < ApplicationController
   end
 
   def update
-    binding.pry
     @student = User.find_by_id(params[:id])
     if @student.present? && @student.update_attributes(update_params)
        flash[:success] = "Student updated successfully!"
