@@ -1,13 +1,13 @@
 <div class="container padding-issue-in-new">
   <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
-    <h3 class='align-center-text'>Edit User</h3>
+    <h3 class='align-center-text'>Edit Employee</h3>
     <br>
-    <%= form_for @user, url: admin_user_path, :method=> :put do |f| %>
-      <% if @user.errors.any? %>
+    <%= form_for @employee, url: employee_path, :method=> :put do |f| %>
+      <% if @employee.errors.any? %>
         <div id="error_explanation">
-          <h4><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <h4><%= pluralize(@employee.errors.count, "error") %> prohibited this user from being saved:</h4>
           <ul>
-            <% @user.errors.full_messages.each do |msg| %>
+            <% @employee.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
             <% end %>
           </ul>
@@ -51,17 +51,6 @@
             </div>
           </div>
           <br>
-          <div class="row">
-            <div class="form-group">
-              <div class="col-sm-12">
-                <% type=['Student', 'Employee'] %>
-                <%= f.label :user_type %>
-                <%= f.select(:user_type, options_for_select(type, :selected => params[:status]), {},{:class => "form-control"}) %>
-              </div>
-            </div>
-          </div>
-          <br>
-         
           <div class="container-fluid">
             <div class="row" style="margin-left: 80px;">
               <div class="col-xs-6">
@@ -71,7 +60,7 @@
               </div>
               <div class="col-xs-6">
                 <div class="form-group">
-                  <%= link_to "Cancel", admin_users_path, :class=>"btn btn-danger" %>
+                  <%= link_to "Cancel", employees_path, :class=>"btn btn-danger" %>
                 </div>
               </div>
             </div>
