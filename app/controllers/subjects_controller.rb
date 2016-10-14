@@ -36,7 +36,11 @@ class SubjectsController < ApplicationController
   def update
     @subject = Subject.find_by_id(params[:id])
     if @subject.present? && @subject.update_attributes(subject_params)
+      if subject_params[:employee_id].present?
+        flash[:success] = "Subject #{@subject.name} is assinged to #{@subject.user.user_name} successfully!"
+      else
        flash[:success] = "Subject updated successfully!"
+      end
        redirect_to subjects_path
     else
       render 'edit'

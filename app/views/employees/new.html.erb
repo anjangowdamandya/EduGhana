@@ -1,6 +1,6 @@
 <div class="container padding-issue-in-new">
   <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
-    <h3 class='align-center-text'>Create Employee</h3>
+    <h3 class='align-center-text'>Add Employee</h3>
     <br>
     <%= form_for :employee, url: employees_path do |f| %>
       <% if @employee.errors.any? %>
@@ -74,7 +74,7 @@
             <div class="row" style="margin-left: 80px;">
               <div class="col-xs-6">
                 <div class="form-group">
-                  <%= f.submit "Save", :class=>"btn btn-primary"  %>
+                  <%= f.submit "Add", :class=>"btn btn-primary"  %>
                 </div>
               </div>
               <div class="col-xs-6">
