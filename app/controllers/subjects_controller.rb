@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
    #Filter
   before_action :authenticate_user!
-  
+
 	def index
     @subjects = Subject.all
   end
@@ -28,6 +28,11 @@ class SubjectsController < ApplicationController
     @subject = Subject.find_by_id(params[:id])
   end
 
+  def assign_subject
+    @subject = Subject.find_by_id(params[:id])
+    @users = User.where("user_type=?", "Employee")
+  end
+
   def update
     @subject = Subject.find_by_id(params[:id])
     if @subject.present? && @subject.update_attributes(subject_params)
@@ -51,7 +56,7 @@ class SubjectsController < ApplicationController
   private
 
   def subject_params
-    params.require(:subject).permit(:name, :subject_type, :batch_id)
+    params.require(:subject).permit(:name, :subject_type, :batch_id, :employee_id)
   end
 
 end

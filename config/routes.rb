@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :students
   resources :employees
 
-
+  get '/subject_assign/:id' => 'subjects#assign_subject', as: :assign_subject
   #Custom Routes
   get 'home/index'
   get 'settings' => 'home#settings'
