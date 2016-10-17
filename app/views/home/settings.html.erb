@@ -34,17 +34,24 @@
 
 		<div class="col-sm-4">
 			<div class="cards">
+				<%= link_to 'Manage Grading', gradings_path, :style=>"font-weight: bold;" %>
+				<p style="color: #A9A9A9;">Where you can manage grading information</p>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="cards">
 				<%= link_to 'Manage Grading Levels', grading_levels_path, :style=>"font-weight: bold;" %>
 				<p style="color: #A9A9A9;">Where you can manage grading lelvels information</p>
 			</div>
 		</div>
-
+	</div>
+	<div class="row">
 		<div class="col-sm-4">
 			<div class="cards">
 				<%= link_to 'Manage Exams', exams_path, :style=>"font-weight: bold;" %>
 				<p style="color: #A9A9A9;">Where you can manage exams information</p>
 			</div>
 		</div>
-		
 	</div>
 </div>

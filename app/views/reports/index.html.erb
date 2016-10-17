@@ -1,0 +1,28 @@
+<div id="content" class="container body-img" style="margin-top: 150px;">
+  <h3 class='heading-fix'> List of Reports</h3>
+  <div>
+    <%= link_to "Create Report", new_report_path, :class=>"btn btn-primary", :style=>"float :right;" %>
+  </div>
+
+  <div class="table-responsive list-view div-documents-list-section fix-position-table">
+    <table class="table table-striped table-hover" id="reports_table">
+      <thead>
+        <tr>
+          <!-- <th class="entry-num">Entry Number</th> -->
+          <th>Name</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="table-body-background change-font">
+        <% @reports.each do |report| %>
+          <tr>
+            <td><%= report.name %></td>
+            <td><%= report.description %></td>
+            <td><%= link_to 'Delete', report_path(report, :url=>"report_url"), method: :delete, data:{confirm: 'Are you want to delete report?'}, :class=> "" %> | <%= link_to 'Edit', edit_report_path(report), :class=> '' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
