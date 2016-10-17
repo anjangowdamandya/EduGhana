@@ -7,4 +7,6 @@ $(document).ready(function(){
     $('#exams_table').DataTable();
     $('#batches_table').DataTable();
     $('#grading_levels_table').DataTable();
+    $('#gradings_table').DataTable();
+    $('#reports_table').DataTable();
 });

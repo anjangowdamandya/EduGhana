@@ -9,12 +9,14 @@ Rails.application.routes.draw do
 
   resources :schools
   resources :terms_semister
+  resources :gradings
   resources :grading_levels
   resources :batches
   resources :subjects
   resources :exams
   resources :students
   resources :employees
+  resources :reports
 
   get '/subject_assign/:id' => 'subjects#assign_subject', as: :assign_subject
   #Custom Routes

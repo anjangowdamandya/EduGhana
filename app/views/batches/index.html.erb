@@ -13,6 +13,7 @@
           <th>Code</th>
           <th>Start Date</th>
           <th>End Date</th>
+          <th>Report Type</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -23,6 +24,11 @@
             <td><%= batch.code %></td>
             <td><%= batch.start_date %></td>
             <td><%= batch.end_date %></td>
+            <td>
+              <% if batch.report_type.present? %>
+                <%= batch.report_type.name %>
+              <% end %>
+            </td>
             <td><%= link_to 'Delete', batch_path(batch, :url=>"batch_url"), method: :delete, data:{confirm: 'Are you want to delete batch?'}, :class=> "" %> | <%= link_to 'Edit', edit_batch_path(batch), :class=> '' %></td>
           </tr>
         <% end %>
