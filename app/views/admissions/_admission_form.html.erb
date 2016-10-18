@@ -1,4 +1,5 @@
-<%= form_for :admission, url: admissions_path do |f| %>
+<%= form_for(@admission, :url => (@admission.new_record? ? admissions_url : admission_url(@admission))) do |f| %>
+
   <% if @admission.errors.any? %>
     <div id="error_explanation">
       <span><%= pluralize(@admission.errors.count, "error") %> prohibited this profile from being saved:</span>

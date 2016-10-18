@@ -12,7 +12,6 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
-          <th>Username</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -23,7 +22,7 @@
               <td><%= admission.user.first_name %></td>
               <td><%= admission.user.last_name %></td>
               <td><%= admission.user.email %></td>
-              <td><%#= link_to 'Delete', student_path(student, :url=>"student_url"), method: :delete, data:{confirm: 'Are you want to delete student?'}, :class=> "" %> | <%#= link_to 'Edit', edit_student_path(student), :class=> '' %></td>
+              <td><%= link_to 'Delete', admission_path(admission, :url=>"admission_url"), method: :delete, data:{confirm: 'Are you want to delete admission?'}, :class=> "" %> | <%= link_to 'Edit', edit_admission_path(admission), :class=> '' %></td>
           <% end %>
             </tr>
         <% else %>

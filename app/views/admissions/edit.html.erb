@@ -1,0 +1,17 @@
+<div class="container padding-issue-in-new">
+  <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
+    <h3 class='align-center-text'>Create Student</h3>
+    <br>
+    <div class="form-group">
+      <select id="select-user-type">
+        <option value="">Select user type</option>
+        <option value="Student">Student</option>
+        <option value="others">Other</option>
+      </select>
+    </div>
+    <div id='admission-form'>
+      <%= render partial: "admission_form", :locals => {users: @users} %>
+    </div>
+      
+  </div>
+</div>

@@ -18,6 +18,31 @@ class AdmissionsController < ApplicationController
     end
   end
 
+  def edit
+    @admission = Admission.find_by_id(params[:id])
+    @users = User.where('id = ?', @admission.user_id)
+  end
+
+  def update
+    @admission = Admission.find_by_id(params[:id])
+    if @admission.present? && @admission.update_attributes(admission_params)
+       flash[:success] = "Admission updated successfully!"
+       redirect_to admissions_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @admission = Admission.find(params[:id])
+    if @admission.present? && @admission.destroy
+      flash[:success] = "Admission deleted successfully!"
+    else
+      flash[:error] = "Failed to delete admission!"
+    end
+      redirect_to admissions_path
+  end
+
   def fetch_users
     @admission = Admission.new
     @users = User.where('user_type = ?', params[:user_type])
