@@ -1,11 +1,11 @@
 <div id="content" class="container body-img" style="margin-top: 150px;">
-  <h2 class='heading-fix'> List of Grade Levels</h2>
+  <h3 class='heading-fix'> List of Grade Levels</h3>
   <div>
     <%= link_to "Create Grade Level", new_grading_level_path, :class=>"btn btn-primary", :style=>"float :right;" %>
   </div>
 
   <div class="table-responsive list-view div-documents-list-section fix-position-table">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" id="grading_levels_table">
       <thead>
         <tr>
         <!-- <th class="entry-num">Entry Number</th> -->

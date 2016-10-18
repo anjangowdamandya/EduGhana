@@ -1,13 +1,13 @@
 <div class="container padding-issue-in-new">
   <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
-    <h3 class='align-center-text'>Create Term</h3>
+    <h3 class='align-center-text'>Edit Term</h3>
     <br>
-    <%= form_for :terms_semister, url: terms_semister_index_path do |f| %>
-      <% if @terms_semister.errors.any? %>
+    <%= form_for (@term), url: term_path, :method => :put do |f| %>
+      <% if @term.errors.any? %>
         <div id="error_explanation">
-          <h4><%= pluralize(@terms_semister.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <h4><%= pluralize(@term.errors.count, "error") %> prohibited this user from being saved:</h4>
           <ul>
-            <% @terms_semister.errors.full_messages.each do |msg| %>
+            <% @term.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
             <% end %>
           </ul>
@@ -69,7 +69,7 @@
               </div>
               <div class="col-xs-6">
                 <div class="form-group">
-                  <%= link_to "Cancel", terms_semister_index_path, :class=>"btn btn-danger" %>
+                  <%= link_to "Cancel", terms_path, :class=>"btn btn-danger" %>
                 </div>
               </div>
             </div>

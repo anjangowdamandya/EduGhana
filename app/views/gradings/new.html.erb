@@ -1,13 +1,13 @@
 <div class="container padding-issue-in-new">
   <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
-    <h3 class='align-center-text'>Edit Exam</h3>
+    <h3 class='align-center-text'>Create Grading</h3>
     <br>
-    <%= form_for :exam, url: exam_path, :method=> :put do |f| %>
-      <% if @exam.errors.any? %>
+    <%= form_for :grading, url: gradings_path do |f| %>
+      <% if @grading.errors.any? %>
         <div id="error_explanation">
-          <h4><%= pluralize(@exam.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <h4><%= pluralize(@grading.errors.count, "error") %> prohibited this user from being saved:</h4>
           <ul>
-            <% @exam.errors.full_messages.each do |msg| %>
+            <% @grading.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>
@@ -18,8 +18,8 @@
       <div class="row">
         <div class="form-group">
             <div class="col-sm-12">
-              <%= f.label :name %>
-              <%= f.text_field :name, class: 'form-control' %>
+              <%= f.label :report_type %>
+              <%= f.collection_select(:report_id, ReportType.all.select(:id, :name), :id, :name, {}, :class =>"form-control") %>
             </div>
         </div>
       </div>
@@ -33,24 +33,6 @@
         </div>
       </div>
       <br>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-12">
-            <%= f.label :maximum_marks %>
-            <%= f.number_field :maximum_marks, class: 'form-control' %>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-12">
-            <%= f.label :weightage %>
-            <%= f.number_field :weightage, class: 'form-control' %>
-          </div>
-        </div>
-      </div>
-      <br>
       <div class="container-fluid">
         <div class="row" style="margin-left: 80px;">
           <div class="col-xs-6">
@@ -60,7 +42,7 @@
           </div>
           <div class="col-xs-6">
             <div class="form-group">
-              <%= link_to "Cancel", exams_path, :class=>"btn btn-danger" %>
+              <%= link_to "Cancel", gradings_path, :class=>"btn btn-danger" %>
             </div>
           </div>
         </div>

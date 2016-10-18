@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :user_name
   validates :user_name, length: { in: 4..20 }
   validates_presence_of :user_type
+  has_one :subject, :foreign_key => 'employee_id'
 
   def full_name
     (first_name + " " + last_name) rescue ''
@@ -21,5 +22,10 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
-  end     
+  end
+
+  #name
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
 end

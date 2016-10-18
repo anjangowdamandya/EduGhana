@@ -11,7 +11,7 @@ class GradingLevelsController < ApplicationController
   end
 
   def create
-    @grading_level = GradingLevel.new(terms_params)
+    @grading_level = GradingLevel.new(grading_level_params)
     if @grading_level.valid? && @grading_level.save!
       flash[:success] = "Grade level created successfully!"
       redirect_to grading_levels_path
@@ -30,7 +30,7 @@ class GradingLevelsController < ApplicationController
 
   def update
     @grading_level = GradingLevel.find_by_id(params[:id])
-    if @grading_level.present? && @grading_level.update_attributes(terms_params)
+    if @grading_level.present? && @grading_level.update_attributes(grading_level_params)
        flash[:success] = "Grade level updated successfully!"
        redirect_to grading_levels_path
     else
@@ -50,7 +50,7 @@ class GradingLevelsController < ApplicationController
 
   private
 
-  def terms_params
+  def grading_level_params
     params.require(:grading_level).permit(:name, :minimum_marks, :maximum_marks, :grade_point, :description)
   end
 

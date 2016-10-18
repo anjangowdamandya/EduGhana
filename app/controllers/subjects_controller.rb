@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
    #Filter
   before_action :authenticate_user!
-  
+
 	def index
     @subjects = Subject.all
   end
@@ -28,10 +28,19 @@ class SubjectsController < ApplicationController
     @subject = Subject.find_by_id(params[:id])
   end
 
+  def assign_subject
+    @subject = Subject.find_by_id(params[:id])
+    @users = User.where("user_type=?", "Employee")
+  end
+
   def update
     @subject = Subject.find_by_id(params[:id])
     if @subject.present? && @subject.update_attributes(subject_params)
+      if subject_params[:employee_id].present?
+        flash[:success] = "Subject #{@subject.name} is assinged to #{@subject.user.user_name} successfully!"
+      else
        flash[:success] = "Subject updated successfully!"
+      end
        redirect_to subjects_path
     else
       render 'edit'
@@ -51,7 +60,7 @@ class SubjectsController < ApplicationController
   private
 
   def subject_params
-    params.require(:subject).permit(:name, :subject_type, :batch_id)
+    params.require(:subject).permit(:name, :subject_type, :batch_id, :employee_id)
   end
 
 end

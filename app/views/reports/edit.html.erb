@@ -1,19 +1,18 @@
 <div class="container padding-issue-in-new">
   <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
-    <h3 class='align-center-text'>Add Subject</h3>
+    <h3 class='align-center-text'>Edit Report</h3>
     <br>
-    <%= form_for :subject, url: subjects_path do |f| %>
-      <% if @subject.errors.any? %>
+    <%= form_for :report, url: report_path, :method => :put do |f| %>
+      <% if @report.errors.any? %>
         <div id="error_explanation">
-          <h4><%= pluralize(@subject.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <h4><%= pluralize(@report.errors.count, "error") %> prohibited this user from being saved:</h4>
           <ul>
-            <% @subject.errors.full_messages.each do |msg| %>
+            <% @report.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
             <% end %>
           </ul>
         </div>
       <% end %>
-
       <div class='row fix-input-filed-center'>
         <div class="col-sm-8 col-xs-12">
           <div class="row">
@@ -28,18 +27,8 @@
           <div class="row">
             <div class="form-group">
               <div class="col-sm-12">
-                <% type=['Core', 'Elective'] %>
-                <%= f.label :subject_type %><br />
-                <%= f.select(:subject_type, options_for_select(type, :selected => params[:status]), {},{:class => "form-control"}) %>
-              </div>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="form-group">
-              <div class="col-sm-12">
-                <%= f.label :batch %>
-                <%= f.collection_select(:batch_id, Batch.all.select(:id, :name), :id, :name, {}, :class =>"form-control") %>
+                <%= f.label :description %>
+                <%= f.text_area :description, class: 'form-control' %>
               </div>
             </div>
           </div>
@@ -53,7 +42,7 @@
               </div>
               <div class="col-xs-6">
                 <div class="form-group">
-                  <%= link_to "Cancel", subjects_path, :class=>"btn btn-danger" %>
+                  <%= link_to "Cancel", reports_path, :class=>"btn btn-danger" %>
                 </div>
               </div>
             </div>

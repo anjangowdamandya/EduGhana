@@ -1,0 +1,15 @@
+<div id="content" class="container body-img" style="margin-top: 150px;">
+  <h4 class='heading-fix'> Assign Subject to Employe</h4><br>
+  <h6>Subject Name : <%= @subject.name %></h6>
+  <%= form_for :subject, url: subject_path, method: :put do |f| %>
+  <div class="form-group">
+    <div class="col-sm-6">
+      <%= f.select :employee_id, options_for_select([["Select Employee", ""]] + get_employes), {}, :class => "form-control add-fav-doc-to-entry select-padding" %><br>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Assign", :class=>"btn btn-primary"  %>
+  </div>
+  <% end %>
+</div>

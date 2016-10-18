@@ -15,5 +15,6 @@
  *= require custom
  *= require font-awesome
  *= require_tree .
+ *= require dataTables/jquery.dataTables
  *= require_self
  */

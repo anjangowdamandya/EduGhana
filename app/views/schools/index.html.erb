@@ -1,11 +1,9 @@
 <div id="content" class="container body-img" style="margin-top: 150px;">
-  <h2 class='heading-fix'> List of School</h2>
-  <div>
-    <%= link_to "Create School", new_school_path, :class=>"btn btn-primary", :style=>"float :right;" %>
-  </div>
+  <h3 class='heading-fix'> Manage School</h3>
+  
 
   <div class="table-responsive list-view div-documents-list-section fix-position-table">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" id="schools_table">
       <thead>
         <tr>
           <!-- <th class="entry-num">Entry Number</th> -->
@@ -29,7 +27,7 @@
             <td><%= school.city %></td>
             <td><%= school.region %></td>
             <td><%= school.country %></td>
-            <td><%= link_to 'Delete', school_path(school, :url=>"school_url"), method: :delete, data:{confirm: 'Are you want to delete school?'}, :class=> "" %> | <%= link_to 'Edit', edit_school_path(school), :class=> '' %></td>
+            <td><%= link_to 'Edit', edit_school_path(school), :class=> '' %></td>
           </tr>
         <% end %>
       </tbody>

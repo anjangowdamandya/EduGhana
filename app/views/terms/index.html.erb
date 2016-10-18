@@ -1,11 +1,11 @@
 <div id="content" class="container body-img" style="margin-top: 150px;">
-  <h2 class='heading-fix'> List of Terms</h2>
+  <h3 class='heading-fix'> List of Terms</h3>
   <div>
-    <%= link_to "Create Term", new_terms_semister_path, :class=>"btn btn-primary", :style=>"float :right;" %>
+    <%= link_to "Create Term", new_term_path, :class=>"btn btn-primary", :style=>"float :right;" %>
   </div>
 
   <div class="table-responsive list-view div-documents-list-section fix-position-table">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" id="terms_table">
       <thead>
         <tr>
           <!-- <th class="entry-num">Entry Number</th> -->
@@ -18,14 +18,14 @@
         </tr>
       </thead>
       <tbody class="table-body-background change-font">
-        <% @terms_semisters.each do |terms| %>
+        <% @terms.each do |terms| %>
           <tr>
             <td><%= terms.name %></td>
             <td><%= terms.start_date %></td>
             <td><%= terms.end_date %></td>
             <td><%= terms.vacation_date %></td>
             <td><%= terms.reopening_date %></td>
-            <td><%= link_to 'Delete', terms_semister_path(terms, :url=>"terms_semister_url"), method: :delete, data:{confirm: 'Are you want to delete terms/semister?'}, :class=> "" %> | <%= link_to 'Edit', edit_terms_semister_path(terms), :class=> '' %></td>
+            <td><%= link_to 'Delete', term_path(terms, :url=>"term_url"), method: :delete, data:{confirm: 'Are you want to delete terms?'}, :class=> "" %> | <%= link_to 'Edit', edit_term_path(terms), :class=> '' %></td>
           </tr>
         <% end %>
       </tbody>

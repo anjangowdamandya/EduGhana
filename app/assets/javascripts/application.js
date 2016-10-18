@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
+//= require jquery_ujs			
 //= require bootstrap
 //= require bootstrap.min
+//= require dataTables/jquery.dataTables
 //= require flash_message
+//= require search
 //= require_tree .
