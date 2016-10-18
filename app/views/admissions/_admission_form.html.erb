@@ -10,10 +10,12 @@
       </ul>
     </div>
   <% end %>
+  <% unless @admission.new_record? %>
   <div class="form-group">
-    <%= f.label :student_ID %><br />
-    <%= f.text_field :student_id, :class => "form-control", autofocus: true %>
+    <%= f.label :admission_Id %><br />
+    <%= f.text_field :admission_id, :class => "form-control",:readonly => true %>
   </div>
+  <% end %>
 
   <div class="form-group">
     <%= f.label :batch %><br />
