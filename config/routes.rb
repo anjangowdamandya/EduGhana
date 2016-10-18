@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :schools
-  resources :terms_semister
+  resources :terms
   resources :gradings
   resources :grading_levels
   resources :batches
