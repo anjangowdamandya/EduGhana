@@ -16,6 +16,25 @@ ActiveRecord::Schema.define(version: 20161017094722) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "admissions", force: :cascade do |t|
+    t.string   "student_id"
+    t.string   "gender"
+    t.text     "street"
+    t.string   "city"
+    t.string   "mobile"
+    t.string   "email"
+    t.string   "id_number"
+    t.string   "id_type"
+    t.string   "admission_date"
+    t.integer  "batch_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "admissions", ["batch_id"], name: "index_admissions_on_batch_id", using: :btree
+  add_index "admissions", ["user_id"], name: "index_admissions_on_user_id", using: :btree
+
   create_table "batches", force: :cascade do |t|
     t.string   "name"
     t.string   "code"
@@ -114,4 +133,6 @@ ActiveRecord::Schema.define(version: 20161017094722) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "admissions", "batches"
+  add_foreign_key "admissions", "users"
 end

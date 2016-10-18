@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  resources :admissions do
+    collection do
+      get :fetch_users
+    end
+  end
   resources :schools
   resources :terms
   resources :gradings
@@ -27,7 +32,6 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
