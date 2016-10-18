@@ -10,7 +10,10 @@ class User < ActiveRecord::Base
   validates :user_name, length: { in: 4..20 }
   validates_presence_of :user_type
 
-
+  def full_name
+    (first_name + " " + last_name) rescue ''
+  end
+  
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
