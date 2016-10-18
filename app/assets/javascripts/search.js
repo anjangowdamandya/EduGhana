@@ -3,7 +3,6 @@ $(document).ready(function(){
     $('#employees_table').DataTable();
     $('#terms_table').DataTable();
     $('#subjects_table').DataTable();
-    $('#schools_table').DataTable();
     $('#exams_table').DataTable();
     $('#batches_table').DataTable();
     $('#grading_levels_table').DataTable();
