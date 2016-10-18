@@ -49,9 +49,9 @@ class AdmissionsController < ApplicationController
   def fetch_users
     @admission = Admission.new
     if params[:user_type] == 'Student'
-      @users = User.where('user_type = ?', params[:user_type])
+      @users = User.where('user_type = ?', params[:user_type]).where('id NOT IN (SELECT DISTINCT(user_id) FROM admissions)')
     else
-      @users = User.where.not('user_type = ?', 'Student')
+      @users = User.where.not('user_type = ?', 'Student').where('id NOT IN (SELECT DISTINCT(user_id) FROM admissions)')
     end
   end
 
